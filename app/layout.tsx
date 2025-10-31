@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Poppins, Montserrat } from "next/font/google";
 import "./globals.css";
-import MuiProviders from "@/providers/MuiProviders";
+
+import ThemeProvider from "@/providers/ThemeProvider";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -32,9 +33,7 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} ${montserat.variable} font-poppins antialiased`}
       >
-        <MuiProviders>
-          {children}
-        </MuiProviders>
+          <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );
