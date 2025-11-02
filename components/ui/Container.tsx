@@ -1,8 +1,10 @@
+'use client'
+
 import { styled } from "@mui/material";
 
 const Container = styled("section")({
   maxWidth: "1280px",
-  width: "90%",
+  width: "91%",
   marginInline: "auto",
 });
 

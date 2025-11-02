@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${poppins.variable} ${montserat.variable} font-poppins antialiased`}
+        className={`${poppins.variable} ${montserat.variable}  font-poppins antialiased`}
       >
           <ThemeProvider>{children}</ThemeProvider>
       </body>
