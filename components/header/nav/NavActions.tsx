@@ -19,81 +19,94 @@ const NavActions: React.FC<Props> = ({ sx }) => {
 
   return (
     <Box sx={{ display: "flex", alignItems: "center", gap: "12px", ...sx }}>
-      <IconButton
-        sx={{ "&:hover": { backgroundColor: "transparent" }, padding: 0 }}
-        disableRipple
-      >
-        <SvgIcon
-          component={Search}
-          sx={{ fill: "none", color: "text.primary", strokeWidth: 2 }}
-        />
-      </IconButton>
-      <IconButton
-        sx={{
-          "&:hover": { backgroundColor: "transparent" },
-          padding: 0,
-          position: "relative",
-        }}
-        disableRipple
-      >
-        <SvgIcon
-          component={Heart}
-          sx={{ fill: "none", color: "text.primary", strokeWidth: 2 }}
-        />
+      <Box component={"div"}>
+        <IconButton
+          sx={{ "&:hover": { backgroundColor: "transparent" }, padding: 0 }}
+          disableRipple
+        >
+          <SvgIcon
+            component={Search}
+            sx={{ fill: "none", color: "text.primary", strokeWidth: 2 }}
+          />
+        </IconButton>
+      </Box>
+      <Box component={"div"}>
+        <IconButton
+          sx={{
+            "&:hover": { backgroundColor: "transparent" },
+            padding: 0,
+            position: "relative",
+          }}
+          disableRipple
+        >
+          <SvgIcon
+            component={Heart}
+            sx={{ fill: "none", color: "text.primary", strokeWidth: 2 }}
+          />
 
-        <Box
-          component={"span"}
+          <Box
+            component={"span"}
+            sx={{
+              position: "absolute",
+              right: -4,
+              top: -2,
+              borderRadius: "9999px",
+              backgroundColor: "primary.main",
+              width: "14px",
+              height: "14px",
+              color: "white",
+              fontSize: "12px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            {wishlist && wishlist?.length}
+          </Box>
+        </IconButton>
+      </Box>
+      <Box component={"div"}>
+        <IconButton
           sx={{
-            position: "absolute",
-            right: -4,
-            top: -2,
-            borderRadius: "9999px",
-            backgroundColor: "primary.main",
-            width: "14px",
-            height: "14px",
-            color: "white",
-            fontSize: "12px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
+            "&:hover": { backgroundColor: "transparent" },
+            padding: 0,
+            position: "relative",
           }}
+          disableRipple
         >
-          {wishlist && wishlist?.length}
-        </Box>
-      </IconButton>
-      <IconButton
+          <SvgIcon
+            component={ShoppingCart}
+            sx={{ fill: "none", color: "text.primary", strokeWidth: 2 }}
+          />
+          <Box
+            component={"span"}
+            sx={{
+              position: "absolute",
+              right: -4,
+              top: -2,
+              borderRadius: "9999px",
+              backgroundColor: "primary.main",
+              width: "14px",
+              height: "14px",
+              color: "white",
+              fontSize: "12px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            {cart && cart?.length}
+          </Box>
+        </IconButton>
+      </Box>
+      <UserButton
         sx={{
-          "&:hover": { backgroundColor: "transparent" },
-          padding: 0,
-          position: "relative",
+          display: {
+            xxs: "none",
+            md: "flex",
+          },
         }}
-        disableRipple
-      >
-        <SvgIcon
-          component={ShoppingCart}
-          sx={{ fill: "none", color: "text.primary", strokeWidth: 2 }}
-        />
-        <Box
-          component={"span"}
-          sx={{
-            position: "absolute",
-            right: -4,
-            top: -2,
-            borderRadius: "9999px",
-            backgroundColor: "primary.main",
-            width: "14px",
-            height: "14px",
-            color: "white",
-            fontSize: "12px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          {cart && cart?.length}
-        </Box>
-      </IconButton>
-      <UserButton />
+      />
     </Box>
   );
 };
