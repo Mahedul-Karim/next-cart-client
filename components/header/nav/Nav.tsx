@@ -6,36 +6,46 @@ import Box from "@mui/material/Box";
 import { usePathname } from "next/navigation";
 import React from "react";
 
-const Nav = () => {
+interface Props {
+  setOpen?: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Nav: React.FC<Props> = ({ setOpen }) => {
   const pathname = usePathname();
 
   return (
     <Box
       component={"nav"}
       sx={{
-        height: "100%",
+        height: {
+          xxs: "auto",
+          md: "100%",
+        },
         display: "flex",
         alignItems: "center",
         width: {
           xxs: "100%",
           md: "auto",
         },
-        paddingInline: {
-          xxs: "16px",
-          md: "0px",
-        },
+        paddingInline: 0,
       }}
     >
       <Box
         component={"ul"}
         sx={{
-          display: {
-            xxs: "block",
-            md: "flex",
+          display: "flex",
+          flexDirection: {
+            xxs: "column",
+            md: "row",
           },
           alignItems: "center",
           height: "100%",
           width: "100%",
+          padding: 0,
+          gap: {
+            xxs: 2,
+            md: 0,
+          },
         }}
       >
         {navItems?.length > 0 &&
@@ -46,13 +56,14 @@ const Nav = () => {
               sx={{
                 display: "flex",
                 alignItems: "center",
+                width: {
+                  xxs: "100%",
+                  md: "auto",
+                },
                 justifyContent: "center",
                 height: "100%",
                 position: "relative",
-                marginBlock: {
-                  xxs: "16px",
-                  md: "0px",
-                },
+                marginBlock: 0,
                 ...(pathname === nav.url && {
                   backgroundColor: {
                     xxs: "primary.main",
@@ -69,10 +80,14 @@ const Nav = () => {
                   borderBottomStyle: "solid",
                   borderColor: "primary.main",
                   paddingBlock: {
-                    xxs: "2px",
+                    xxs: "6px",
                     md: "0px",
                   },
                 }),
+              }}
+              onClick={() => {
+                if (!setOpen) return;
+                setOpen(false);
               }}
             >
               <Link

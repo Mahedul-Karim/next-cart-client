@@ -17,7 +17,19 @@ const UserButton: React.FC<Props> = ({ sx }) => {
     >
       <SvgIcon
         component={CircleUser}
-        sx={{ fill: "none", color: "text.primary", strokeWidth: 2 }}
+        sx={{
+          fill: "none",
+          color: "text.secondary",
+          strokeWidth: 1.5,
+          width: {
+            xxs: "30px",
+            md: "24px",
+          },
+          height: {
+            xxs: "30px",
+            md: "24px",
+          },
+        }}
       />
     </IconButton>
   );

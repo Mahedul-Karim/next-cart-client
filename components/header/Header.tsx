@@ -4,6 +4,7 @@ import Container from "../ui/Container";
 import Logo from "../ui/Logo";
 import Nav from "./nav/Nav";
 import NavActions from "./nav/NavActions";
+import MobileNav from "./nav/MobileNav";
 
 const Header = () => {
   return (
@@ -29,6 +30,19 @@ const Header = () => {
         <Logo />
         <Nav />
         <NavActions />
+      </Container>
+      <Container
+        sx={{
+          display: {
+            xxs: "flex",
+            md: "none",
+          },
+          alignItems: "center",
+          justifyContent: "space-between",
+          height: "100%",
+        }}
+      >
+        <MobileNav />
       </Container>
     </Box>
   );

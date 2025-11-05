@@ -4,10 +4,11 @@ import Box from "@mui/material/Box";
 import { useAppSelector } from "@/hooks/useAppSelector";
 import IconButton from "@mui/material/IconButton";
 import React from "react";
-import { SxProps, Theme } from "@mui/material";
+import {  SxProps, Theme } from "@mui/material";
 import SvgIcon from "@mui/material/SvgIcon";
 import { Heart, Search, ShoppingCart } from "lucide-react";
 import UserButton from "./UserButton";
+import Link from "next/link";
 
 type Props = {
   sx?: SxProps<Theme>;
@@ -26,7 +27,7 @@ const NavActions: React.FC<Props> = ({ sx }) => {
         >
           <SvgIcon
             component={Search}
-            sx={{ fill: "none", color: "text.primary", strokeWidth: 2 }}
+            sx={{ fill: "none", color: "text.secondary", strokeWidth: 1.5 }}
           />
         </IconButton>
       </Box>
@@ -38,11 +39,17 @@ const NavActions: React.FC<Props> = ({ sx }) => {
             position: "relative",
           }}
           disableRipple
+          component={Link}
+          href="/wishlist"
         >
-          <SvgIcon
-            component={Heart}
-            sx={{ fill: "none", color: "text.primary", strokeWidth: 2 }}
-          />
+            <SvgIcon
+              component={Heart}
+              sx={{
+                fill: "none",
+                color: "text.secondary",
+                strokeWidth: 1.5
+              }}
+            />
 
           <Box
             component={"span"}
@@ -73,10 +80,12 @@ const NavActions: React.FC<Props> = ({ sx }) => {
             position: "relative",
           }}
           disableRipple
+          href="/cart"
+          component={Link}
         >
           <SvgIcon
             component={ShoppingCart}
-            sx={{ fill: "none", color: "text.primary", strokeWidth: 2 }}
+            sx={{ fill: "none", color: "text.secondary", strokeWidth: 1.5 }}
           />
           <Box
             component={"span"}
