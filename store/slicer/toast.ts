@@ -1,7 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState: {
-  toasts: any[];
+  toasts: {
+    id: string;
+    type: "success" | "error" | "warning";
+    message: string;
+  }[];
 } = {
   toasts: [],
 };

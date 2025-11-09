@@ -5,3 +5,32 @@
 .font-montserat {
   font-family: var(--font-montserat);
 }
+
+.slide {
+  animation: slider 0.3s forwards;
+}
+
+.no-slide {
+  animation: no-slider 0.3s forwards;
+}
+
+@keyframes no-slider {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(-80px);
+  }
+  100% {
+    transform: translateX(calc(100% + 80px));
+  }
+}
+
+@keyframes slider {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}

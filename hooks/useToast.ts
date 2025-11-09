@@ -1,0 +1,71 @@
+//@ts-nocheck
+import { generateUniqeId } from "@/utils/utils";
+import { createToast, deleteToast } from "../store/slicer/toast";
+import { useAppDispatch } from "./useAppDispatch";
+
+export const useToast = () => {
+  const dispatch = useAppDispatch();
+
+  const removeToast = (id: string, timeout?: string | number) => {
+    const container = document.getElementById("toast-container");
+
+    if (!container) {
+      return;
+    }
+
+    const childNodes = [...container.childNodes];
+
+    const elementToRemove = childNodes.find(
+      (elem) => elem.dataset.id.trim() === id.trim()
+    );
+
+    if (!elementToRemove) {
+      return;
+    }
+
+    elementToRemove.classList.add("no-slide");
+
+    if (timeout) {
+      clearTimeout(timeout);
+    }
+
+    setTimeout(() => {
+      dispatch(deleteToast({ id }));
+    }, 600);
+  };
+
+  const generateToast = (type, message) => {
+    const uuid = generateUniqeId();
+
+    const toast = {
+      id: uuid,
+      type,
+      message,
+    };
+
+    dispatch(createToast({ toast }));
+
+    const timeout = setTimeout(() => {
+      removeToast(uuid, timeout);
+    }, 3000);
+  };
+
+  const success = (message) => {
+    generateToast("success", message);
+  };
+
+  const error = (message) => {
+    generateToast("error", message);
+  };
+
+  const warning = (message) => {
+    generateToast("warning", message);
+  };
+
+  return {
+    removeToast,
+    success,
+    error,
+    warning,
+  };
+};
