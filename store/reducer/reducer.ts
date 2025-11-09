@@ -9,7 +9,7 @@ import seller from "../slicer/seller";
 import toast from "../slicer/toast";
 
 export const rootReducer = combineReducers({
-  user,
+  auth: user,
   cart,
   wishlist,
   event,
