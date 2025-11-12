@@ -4,7 +4,8 @@ import NavActions from "../header/nav/NavActions";
 
 const Footer = () => {
   return (
-    <Box component={"footer"}>
+    <>
+      <Box component={"footer"}>This is footer</Box>
       <NavActions
         sx={{
           position: "sticky",
@@ -33,7 +34,7 @@ const Footer = () => {
           },
         }}
       />
-    </Box>
+    </>
   );
 };
 

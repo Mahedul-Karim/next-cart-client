@@ -59,13 +59,14 @@ const NavActions: React.FC<Props> = ({ sx }) => {
               top: -2,
               borderRadius: "9999px",
               backgroundColor: "primary.main",
-              width: "14px",
-              height: "14px",
+              width: "16px",
+              height: "16px",
               color: "white",
               fontSize: "12px",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
+              fontWeight:500
             }}
           >
             {wishlist && wishlist?.length}
@@ -95,13 +96,14 @@ const NavActions: React.FC<Props> = ({ sx }) => {
               top: -2,
               borderRadius: "9999px",
               backgroundColor: "primary.main",
-              width: "14px",
-              height: "14px",
+              width: "16px",
+              height: "16px",
               color: "white",
               fontSize: "12px",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
+              fontWeight:500
             }}
           >
             {cart && cart?.length}

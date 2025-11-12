@@ -58,10 +58,10 @@ const HeroCarousel = () => {
         pagination={{
           clickable: true,
         }}
-        // autoplay={{
-        //   delay: 2000,
-        //   disableOnInteraction: true,
-        // }}
+        autoplay={{
+          delay: 2000,
+          disableOnInteraction: true,
+        }}
         modules={[Autoplay, Pagination]}
         style={{ height: "100%" }}
         onSwiper={(swiper) => (swiperRef.current = swiper)}
