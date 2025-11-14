@@ -45,9 +45,9 @@ export const useToast = () => {
 
     dispatch(createToast({ toast }));
 
-    // const timeout = setTimeout(() => {
-    //   removeToast(uuid, timeout);
-    // }, 3000);
+    const timeout = setTimeout(() => {
+      removeToast(uuid, timeout);
+    }, 3000);
   };
 
   const success = (message) => {

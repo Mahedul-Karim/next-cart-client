@@ -1,40 +1,18 @@
 import Box from "@mui/material/Box";
-import CardSkeleton from "../ui/loader/CardSkeleton";
 import { BASE_URL } from "@/utils/constants";
 import Image from "../ui/Image";
 import ProductCard from "./ProductCard";
 
 const Featured = async () => {
-  //   await new Promise((resolve) => setTimeout(resolve, 5000));
   const res = await fetch(`${BASE_URL}/product`, {
-    // cache: "force-cache",
-    // next: {
-    //   tags: ["featuredProducts"],
-    // },
+    cache: "force-cache",
+    next: {
+      tags: ["featuredProducts"],
+    },
   });
   const data = await res.json();
 
   const products: Product[] = data?.products ? data?.products?.slice(0, 8) : [];
-
-  const loader = (
-    <Box
-      sx={{
-        display: "grid",
-        marginBlock: 3,
-        gridTemplateColumns: {
-          xxs: "1fr 1fr",
-          md: "repeat(3,1fr)",
-          lg: "repeat(4,1fr)",
-        },
-        gap: {
-          xxs: 2,
-          md: 3,
-        },
-      }}
-    >
-      <CardSkeleton />
-    </Box>
-  );
 
   return (
     <>
