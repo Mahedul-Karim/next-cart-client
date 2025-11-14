@@ -33,7 +33,6 @@ const wishlistSlice = createSlice({
       state.wishlist = state.wishlist.filter((c: any) => c._id !== itemId);
       localStorage.setItem("wishlistItems", JSON.stringify(state.wishlist));
     },
-    allwishList(state, action) {},
   },
 });
 

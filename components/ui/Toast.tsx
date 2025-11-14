@@ -84,8 +84,7 @@ const Toast = () => {
               component={"section"}
               sx={{
                 width: {
-                  xxs: "270px",
-                  xs: "300px",
+                  xs: "270px",
                   sm: "350px",
                 },
                 minHeight: "75px",

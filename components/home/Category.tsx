@@ -21,7 +21,11 @@ import Container from "../ui/Container";
 
 const Category = () => {
   return (
-    <Container sx={{ paddingBlock: 8 }}>
+    <Container
+      sx={{
+        paddingBlock: 4
+      }}
+    >
       <Box
         component={"section"}
         sx={{ display: "flex", alignItems: "center", gap: 2 }}
