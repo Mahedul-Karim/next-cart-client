@@ -1,6 +1,8 @@
 import Category from "@/components/home/Category";
+import Deals from "@/components/home/Deals";
 import Hero from "@/components/home/Hero";
 import HomeProducts from "@/components/home/HomeProducts";
+import NewArrivals from "@/components/home/NewArrivals";
 
 export default function Home() {
   return (
@@ -8,6 +10,8 @@ export default function Home() {
       <Hero />
       <Category />
       <HomeProducts />
+      <Deals />
+      <NewArrivals />
     </>
   );
 }

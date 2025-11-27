@@ -12,18 +12,11 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import Container from "../ui/Container";
 
-/**
- *
- * Package - for products
- * Gift - Deals
- * PackagePlus - New Arriavals
- */
-
 const Category = () => {
   return (
     <Container
       sx={{
-        paddingBlock: 4
+        paddingBlock: 4,
       }}
     >
       <Box
