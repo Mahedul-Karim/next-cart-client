@@ -35,7 +35,7 @@ const EventCard = () => {
               sm:"20px"
             },
             fontWeight: 500,
-            color: "secondary.main",
+            color: "primary.main",
           }}
         >
           Deal of the Day
@@ -75,13 +75,13 @@ const EventCard = () => {
               fontWeight: 500,
               color: alpha(theme.palette.text.secondary, 0.4),
               "&:first-of-type": {
-                color: "secondary.main",
+                color: "primary.main",
               },
             },
           })}
         >
-          <span className="text-[22px] font-[500] text-secondary">$129.00</span>
-          <span className="text-[22px] font-[500] text-grey-200">
+          <span>$129.00</span>
+          <span>
             Was $150.99
           </span>
         </Typography>

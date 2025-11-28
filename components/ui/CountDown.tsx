@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import { alpha } from "@mui/material/styles";
 
 type Timer = {
   days: number;
@@ -85,7 +84,7 @@ function CountDown({
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              bgcolor: "secondary.main",
+              bgcolor: "primary.main",
               color: "white",
               fontSize: "20px",
               borderRadius: "4px",
