@@ -14,8 +14,8 @@ export default function Home() {
       <HomeProducts />
       <Deals />
       <NewArrivals />
-      <Newsletter />
       <Branding />
+      <Newsletter />
     </>
   );
 }
