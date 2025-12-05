@@ -18,6 +18,7 @@ import { useToast } from "@/hooks/useToast";
 import { useAppDispatch } from "@/hooks/useAppDispatch";
 import { addTowishlist, removewishlistItem } from "@/store/slicer/wishlist";
 import { addToCart } from "@/store/slicer/cart";
+import CustomRatings from "../ui/CustomRatings";
 
 const ProductCard = ({ data }: { data: Product }) => {
   const productName = data?.name.replace(/\s+/, "-");
@@ -236,45 +237,7 @@ const ProductCard = ({ data }: { data: Product }) => {
             {data.name}
           </Typography>
           <Box sx={{ display: "flex", alignItems: "center", gap: "4px" }}>
-            <Rating
-              readOnly
-              value={data.ratings}
-              precision={0.5}
-              icon={
-                <SvgIcon
-                  component={Star}
-                  sx={{
-                    fill: "#FFB21D",
-                    stroke: "#FFB21D",
-                    width: {
-                      xxs: "12px",
-                      xs: "14px",
-                    },
-                    height: {
-                      xxs: "12px",
-                      xs: "14px",
-                    },
-                  }}
-                />
-              }
-              emptyIcon={
-                <SvgIcon
-                  component={Star}
-                  sx={{
-                    fill: "none",
-                    stroke: "#FFB21D",
-                    width: {
-                      xxs: "12px",
-                      xs: "14px",
-                    },
-                    height: {
-                      xxs: "12px",
-                      xs: "14px",
-                    },
-                  }}
-                />
-              }
-            />
+            <CustomRatings ratings={data.ratings} />
             <Typography
               component={"span"}
               sx={{

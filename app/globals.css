@@ -50,3 +50,37 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+input[type="range"] {
+  width: 100%;
+  position: absolute;
+  top: -9px;
+  left: 0;
+  background: none;
+  pointer-events: none;
+  appearance: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #2e86de;
+  pointer-events: auto;
+  appearance: none;
+  transition: all 0.3s;
+}
+input[type="range"]::-moz-range-thumb {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #2e86de;
+  pointer-events: auto;
+  appearance: none;
+  transition: all 0.3s;
+}
+input[type="range"]::-webkit-slider-thumb:hover {
+  box-shadow: 0 0 0 8px rgba(46, 134, 222,0.2);
+}
+input[type="range"]::-moz-range-thumb:hover {
+  box-shadow: 0 0 0 8px rgba(46, 134, 222,0.2);
+}
