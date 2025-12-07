@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import { BASE_URL } from "@/utils/constants";
 import ProductCard from "../ProductCard";
 import Image from "@/components/ui/Image";
+import Pagination from "@/components/ui/Pagination";
 
 interface Props {
   search: string;
@@ -78,6 +79,9 @@ const Main: React.FC<Props> = async ({
           />
         </Box>
       )}
+      <Box sx={{ display: "flex", alignItems: "center", gap: 1, marginTop: 2 }}>
+        <Pagination activePage={page} totalItems={totalPage} />
+      </Box>
     </Box>
   );
 };
