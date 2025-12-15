@@ -3,12 +3,13 @@
 import Box from "@mui/material/Box";
 import { useAppSelector } from "@/hooks/useAppSelector";
 import IconButton from "@mui/material/IconButton";
-import React from "react";
-import {  SxProps, Theme } from "@mui/material";
+import React, { useState } from "react";
+import { SxProps, Theme } from "@mui/material";
 import SvgIcon from "@mui/material/SvgIcon";
 import { Heart, Search, ShoppingCart } from "lucide-react";
 import UserButton from "./UserButton";
 import Link from "next/link";
+import SearchModal from "@/components/ui/modal/SearchModal";
 
 type Props = {
   sx?: SxProps<Theme>;
@@ -18,12 +19,15 @@ const NavActions: React.FC<Props> = ({ sx }) => {
   const { cart } = useAppSelector((state) => state.cart);
   const { wishlist } = useAppSelector((state) => state.wishlist);
 
+  const [open, setOpen] = useState(false);
+
   return (
     <Box sx={{ display: "flex", alignItems: "center", gap: "12px", ...sx }}>
       <Box component={"div"}>
         <IconButton
           sx={{ "&:hover": { backgroundColor: "transparent" }, padding: 0 }}
           disableRipple
+          onClick={() => setOpen(true)}
         >
           <SvgIcon
             component={Search}
@@ -42,14 +46,14 @@ const NavActions: React.FC<Props> = ({ sx }) => {
           component={Link}
           href="/wishlist"
         >
-            <SvgIcon
-              component={Heart}
-              sx={{
-                fill: "none",
-                color: "text.secondary",
-                strokeWidth: 1.5
-              }}
-            />
+          <SvgIcon
+            component={Heart}
+            sx={{
+              fill: "none",
+              color: "text.secondary",
+              strokeWidth: 1.5,
+            }}
+          />
 
           <Box
             component={"span"}
@@ -66,7 +70,7 @@ const NavActions: React.FC<Props> = ({ sx }) => {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              fontWeight:500
+              fontWeight: 500,
             }}
           >
             {wishlist && wishlist?.length}
@@ -103,7 +107,7 @@ const NavActions: React.FC<Props> = ({ sx }) => {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              fontWeight:500
+              fontWeight: 500,
             }}
           >
             {cart && cart?.length}
@@ -118,6 +122,7 @@ const NavActions: React.FC<Props> = ({ sx }) => {
           },
         }}
       />
+      <SearchModal open={open} setOpen={setOpen} />
     </Box>
   );
 };

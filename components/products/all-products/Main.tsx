@@ -33,6 +33,10 @@ const Main: React.FC<Props> = async ({
       minValue: price[0],
       maxValue: price[1],
     }),
+    cache: "force-cache",
+    next: {
+      tags: ["allProducts"],
+    },
   });
 
   const data = await res.json();
