@@ -123,8 +123,8 @@ export const navItems = [
     url: "/products",
   },
   {
-    title: "Deals",
-    url: "/events",
+    title: "About Us",
+    url: "/about",
   },
   {
     title: "FAQ",
@@ -250,64 +250,64 @@ export const footerProductLinks = [
   },
   {
     name: "Careers",
-    link:"/"
+    link: "/",
   },
   {
     name: "Store Locations",
-    link:"/"
+    link: "/",
   },
   {
     name: "Our Blog",
-    link:"/"
+    link: "/",
   },
   {
     name: "Reviews",
-    link:"/"
+    link: "/",
   },
 ];
 
 export const footercompanyLinks = [
   {
     name: "Game & Video",
-    link:"/"
+    link: "/",
   },
   {
     name: "Phone &Tablets",
-    link:"/"
+    link: "/",
   },
   {
     name: "Computers & Laptop",
-    link:"/"
+    link: "/",
   },
   {
     name: "Sport Watches",
-    link:"/"
+    link: "/",
   },
   {
     name: "Events",
-    link:"/"
+    link: "/",
   },
 ];
 
 export const footerSupportLinks = [
   {
     name: "FAQ",
-    link:"/"
+    link: "/",
   },
   {
     name: "Reviews",
-    link:"/"
+    link: "/",
   },
   {
     name: "Contact Us",
-    link:"/"
+    link: "/",
   },
   {
     name: "Shipping",
-    link:"/"
+    link: "/",
   },
   {
     name: "Live chat",
-    link:"/"
+    link: "/",
   },
 ];
