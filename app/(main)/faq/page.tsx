@@ -72,7 +72,7 @@ const Page = () => {
           <Accordion
             key={faq.id}
             elevation={0}
-            sx={{ "&::before": { display: "none" } }}
+            sx={{ "&::before": { display: "none" },bgcolor:"background.paper" }}
           >
             <AccordionSummary
               expandIcon={<ChevronDown />}
