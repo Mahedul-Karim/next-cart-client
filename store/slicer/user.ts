@@ -1,4 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk } from "@reduxjs/toolkit";
+
+export const loadUserFromStorage = createAsyncThunk<any>(
+  "auth/loadUserFromStorage",
+  async () => {
+    if (typeof window === "undefined") return null;
+
+    const storedUser = localStorage.getItem("user");
+
+    if (!storedUser) return null;
+
+    return JSON.parse(storedUser) as User;
+  }
+);
 
 interface State {
   isLoggedIn: boolean;
@@ -34,6 +48,15 @@ const userSlice = createSlice({
     deleteUser(state, action) {
       state.allUsers = state.allUsers.filter((u) => u._id !== action.payload);
     },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(loadUserFromStorage.fulfilled, (state, action) => {
+      if (action.payload) {
+        state.user = action.payload.user;
+        state.token = action.payload.token;
+        state.isLoggedIn = true;
+      }
+    });
   },
 });
 
